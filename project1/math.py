@@ -9,9 +9,12 @@ Find the sum of all the multiples of 3 or 5 below the provided parameter value n
 
 def multiples(number):
     sum=0
-    for i in range(1,number):
-        if i%3==0 or i%5==0:
-            sum+=i
+    divisibleBy3=number/3
+    divisibleBy5=number/5
+    divisibleBy15=number/15
+    sum= 3* (divisibleBy3*(divisibleBy3+1)/2) + \
+         5* (divisibleBy5*(divisibleBy5+1)/2) - \
+        15* (divisibleBy15*(divisibleBy15+1)/2)
     return sum
 
 
