@@ -8,7 +8,7 @@ Find the sum of all the multiples of 3 or 5 below the provided parameter value n
 
 def multiples(number):
     sum=0
-    number-1  #this line has to be added for sum of numbers below and not includint noumber in parameter
+    number-=1  #this line has to be added for sum of numbers below and not includint noumber in parameter
     divisibleBy3=number//3
     divisibleBy5=number//5
     divisibleBy15=number//15
@@ -17,7 +17,7 @@ def multiples(number):
         15* (divisibleBy15*(divisibleBy15+1)//2)
     return sum
 
-
+print(multiples(40))
 print(multiples(1000))
 print(multiples(49))
 print(multiples(19564))

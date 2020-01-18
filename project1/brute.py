@@ -15,10 +15,11 @@ def multiples(number):
     return sum
 
 
+print(multiples(10))
 print(multiples(1000))
 print(multiples(49))
 print(multiples(19564))
-print(multiples(1000000))
+print(multiples(10000))
 print(multiples(8456))
 print(multiples(3))
 print(multiples(5))
