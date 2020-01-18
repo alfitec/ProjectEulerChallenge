@@ -6,15 +6,15 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below the provided parameter value number.
 """
 
-
 def multiples(number):
     sum=0
-    divisibleBy3=number/3
-    divisibleBy5=number/5
-    divisibleBy15=number/15
-    sum= 3* (divisibleBy3*(divisibleBy3+1)/2) + \
-         5* (divisibleBy5*(divisibleBy5+1)/2) - \
-        15* (divisibleBy15*(divisibleBy15+1)/2)
+    number-1  #this line has to be added for sum of numbers below and not includint noumber in parameter
+    divisibleBy3=number//3
+    divisibleBy5=number//5
+    divisibleBy15=number//15
+    sum= 3* (divisibleBy3*(divisibleBy3+1)//2) + \
+         5* (divisibleBy5*(divisibleBy5+1)//2) - \
+        15* (divisibleBy15*(divisibleBy15+1)//2)
     return sum
 
 

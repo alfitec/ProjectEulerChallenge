@@ -9,7 +9,7 @@ Find the sum of all the multiples of 3 or 5 below the provided parameter value n
 
 def multiples(number):
     sum=0
-    for i in range(1,number+1):
+    for i in range(1,number):    # if we wont to include number in sum we can put number+1 here
         if i%3==0 or i%5==0:
             sum+=i
     return sum
