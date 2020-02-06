@@ -11,13 +11,14 @@ def prime(number):
         for j in primes:
             if i%j==0:
                 i_is_prime=False
+                break
         if i_is_prime:
             primes.append(i)
     return primes
 
 
 def foo():
-    return prime(10000)
+    return prime(1000000)
 
 
 
