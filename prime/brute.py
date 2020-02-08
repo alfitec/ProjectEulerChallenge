@@ -18,7 +18,7 @@ def prime(number):
 
 
 def foo():
-    return prime(1000000)
+    return prime(100000)
 
 
 
