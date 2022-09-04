@@ -7,7 +7,7 @@ import time
 @functools.cache 
 def CollatzLength(n):
 
-    if (n==1): return 0
+    if (n==1): return 1
 
     if n%2==0: return CollatzLength(n/2)+1
     else:      return CollatzLength(3*n+1)+1
