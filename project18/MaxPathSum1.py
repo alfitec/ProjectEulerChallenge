@@ -1,6 +1,7 @@
 from functools import reduce
 
-triangle=([75],
+triangle=(
+(75,),
 (95,64),
 (17,47,82),
 (18,35,87,10),
@@ -16,17 +17,9 @@ triangle=([75],
 (63,66,4,68,89,53,67,30,73,16,69,87,40,31),
 (4,62,98,27,23,9,70,98,73,93,38,53,60,4,23))
 
-def consolidateRows(shortRow,longRow):
-    print(list(zip((0,*shortRow),longRow)))
-    nwRow1=[sum(z) for z in zip((0,*shortRow),(longRow))]
-    nwRow2=[sum(z) for z in zip((*shortRow,0),(longRow))]
-    print(list((z,max(z)) for z in zip(nwRow1,nwRow2)))
-    nwRow1=(sum(z) for z in zip((0,*shortRow),(longRow)))
-    nwRow2=(sum(z) for z in zip((*shortRow,0),(longRow)))
-    return list(max(z) for z in zip(nwRow1,nwRow2))
+def consolidateRows(prevRow,currentRow):
+    nwRow1=(sum(z) for z in zip((0,*prevRow),currentRow))
+    nwRow2=(sum(z) for z in zip((*prevRow,0),currentRow))
+    return tuple(max(z) for z in zip(nwRow1,nwRow2))   # returning generators without converting to touple makes problems
 
-print(list(reduce(consolidateRows,((1,),(2,3),(1,1,1)))))
-#((41,41,26,56,83,40,80,70,33),
-#(41,48,72,33,47,32,37,16,94,29)))))
-print(triangle)
-print(max(list(reduce(consolidateRows,triangle)))) # [list(t) for t in triangle])))
+print(max(list(reduce(consolidateRows,triangle)))) 
